@@ -1,0 +1,566 @@
+@font-face {
+    font-family: 'Nebulosa';
+    src: url('nebulosa.woff2') format('woff2'),
+        url('nebulosa.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+:root {
+    --main-bg-color: white;
+    --main-text-color: darkslategray;
+    --header-bg-color: white;
+    --hover-bg-color: #D9D9D9;
+    --hover-color: black;
+    --hyperlink-color: royalblue;
+    --blockquote-text-color: black;
+    --heading-color: darkred;
+    --aside-bg-color: lavender;
+    --bottom-bg-color: floralwhite;
+    --table-background: aliceblue;
+    --table-horiz-border: lightsteelblue;
+    --table-head-bg: antiquewhite;
+    --footer-bg-color: darkgrey;
+    --series-1-bg-color: floralwhite;
+    --series-2-bg-color: oldlace;
+    --series-3-bg-color: antiquewhite;
+
+    --saturn-font1: "Nebulosa", Arial, sans-serif;
+    --saturn-font2: "STIX Two Text", serif;
+    --roboto-sans: "Roboto", sans-serif;
+    --roboto-serif: "Roboto Serif", serif;
+}
+
+html {
+    box-sizing: border-box;
+    font-family: var(--roboto-sans);
+    font-size: 1em;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+    margin: 10px auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    min-width: 300px;
+    max-width: 2000px;
+}
+
+p {
+    margin-bottom: 0.6rem;
+}
+
+aside p {
+    font-size: 0.9rem;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.bottom p {
+
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.header-container {
+    grid-area: header;
+}
+
+nav {
+    grid-area: nav;
+}
+
+main {
+    grid-area: main;
+    background-color: var(--main-bg-color);
+    border-radius: 0.4rem;
+}
+
+aside {
+    grid-area: aside;
+    background-color: var(--aside-bg-color);
+    border-radius: 0.4rem;
+}
+
+.bottom {
+    grid-area: bottom;
+    background-color: var(--bottom-bg-color);
+    border-radius: 0.4rem;
+}
+
+footer {
+    grid-area: footer;
+}
+
+blockquote {
+    font-family: var(--roboto-serif);
+    color: var(--blockquote-text-color);
+    font-size: 0.9rem;
+}
+
+cite {
+    font-family: var(--roboto-sans);
+}
+
+.body-container {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "nav nav"
+        "main aside"
+        "bottom bottom"
+        "footer footer";
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto auto auto auto;
+    row-gap: 10px;
+    column-gap: 10px;
+    width: 100%;
+}
+
+.header-container {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    column-gap: 0px;
+    row-gap: 10px;
+    background-color: var(--header-bg-color);
+
+}
+
+.saturn-logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px 5px 5px 5px;
+}
+
+.saturn-logo {
+    border-radius: 10px;
+}
+
+.saturn-name {
+    font-family: var(--saturn-font1);
+    margin-top: 5px;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--heading-color);
+    text-align: center;
+}
+
+.different-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.different-1,
+.different-2 {
+    font-family: var(--saturn-font2);
+    font-size: clamp(1.8rem, 5.4vw, 3rem);
+    color: var(--heading-color);
+    white-space: nowrap;
+
+}
+
+.nav-container {
+    position: sticky;
+    top: 10px;
+    background-color: var(--heading-color);
+    padding: 0.5rem;
+    border-radius: 0.4rem;
+}
+
+.nav-container ul {
+    display: grid;
+    grid-template-columns: repeat(4, auto) 1fr auto;
+    gap: 1rem;
+    list-style: none;
+    font-size: 1.2rem;
+    white-space: nowrap;
+}
+
+.nav-container ul li:nth-child(5) {
+    grid-column: 6;
+    text-align: right;
+}
+
+.nav-container ul li a {
+    display: flex;
+    align-items: center;
+    padding: 0.2rem;
+    color: var(--main-bg-color);
+    text-decoration: none;
+}
+
+.nav-container ul li a:hover {
+    background-color: var(--hover-bg-color);
+    color: var(--hover-color);
+    border-radius: 0.3rem;
+
+}
+
+.nav-container ul li a img {
+    fill: var(--main-gb-color);
+    width: 1.8rem;
+    height: 1.8rem;
+}
+
+.nav-container ul li a:hover img,
+footer a:hover img {
+    filter: invert(1);
+}
+
+.optional {
+    display: none;
+}
+
+h1,
+h2 {
+    font-weight: 400;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+article h1,
+.bottom h2 {
+    background-color: lightgrey;
+    border-radius: 0.4rem;
+}
+
+aside h2 {
+    background-color: var(--table-horiz-border);
+    border-radius: 0.4rem;
+}
+
+.dealership,
+.dealership.sl2 {
+    float: right;
+    width: 50%;
+    max-width: 520px;
+    margin: 10px;
+}
+
+.dealership.sl2 {
+    max-width: 640px;
+}
+
+.dealership img,
+.dealership.sl2 img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+}
+
+.fig-caption,
+.authors {
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+@media (max-width: 800px) {
+    .optional {
+        display: inline-block;
+    }
+
+    .span-optional {
+        display: none;
+    }
+
+    .body-container {
+        grid-template-areas:
+            "header"
+            "nav"
+            "main"
+            "bottom"
+            "aside"
+            "footer";
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 550px) {
+    .header-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .saturn-logo-container {
+        width: auto;
+        margin-bottom: 0px;
+    }
+
+    .different-container {
+        align-items: center;
+        text-align: center;
+        margin: 0px;
+    }
+
+    .different-1,
+    .different-2 {
+        font-size: clamp(1rem, 6vw, 2rem);
+        margin: 0px;
+    }
+
+    .nav-container ul li a span {
+        display: none;
+    }
+
+    .dealership,
+    .dealership.sl2,
+    .dealership.homecoming {
+        float: none;
+        width: 100%;
+        margin: 0px;
+        margin-bottom: 20px;
+        max-width: none;
+    }
+
+
+}
+
+.bottom .play-audio {
+    margin: 10px auto;
+    border: 3px solid darkred;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: var(--aside-bg-color);
+    max-width: 300px;
+    text-align: center;
+}
+
+.authors {
+    margin-top: 3px;
+    font-style: italic;
+    font-size: 0.75rem;
+}
+
+.authors a {
+    text-decoration: none;
+    color: var(--hyperlink-color)
+}
+
+.authors a:hover {
+    color: var(--main-bg-color);
+    background-color: var(--hyperlink-color);
+    padding: 2px 4px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    padding: 0.8rem 0.5rem 0.5rem 0.5rem;
+    background-color: var(--footer-bg-color);
+    border-radius: 0.4rem;
+    font-size: 1rem;
+    white-space: nowrap;
+}
+
+footer>a {
+    margin-left: 0.5rem;
+    text-decoration: none;
+}
+
+footer a img {
+    width: 2rem;
+    height: 2rem;
+}
+
+.footer-social {
+    margin-right: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.footer-social span {
+    margin-top: 0.5rem;
+}
+
+/* css for timeline page */
+.timeline,
+timeline>p {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.timeline p {
+    margin: 0px;
+}
+
+.timeline>h3 {
+    font-size: 1rem;
+    background-color: var(--table-background);
+    border-bottom: 1px solid var(--table-horiz-border);
+    padding-top: 0.2rem;
+    padding-bottom: 0.05rem;
+    padding-left: 0.5rem;
+    border-radius: 4px;
+}
+
+.timeline ul {
+    margin-top: 0.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.timeline ul li {
+    margin-left: 2rem;
+    list-style-type: disc;
+}
+
+.timeline ul li::marker {
+    color: var(--table-horiz-border);
+}
+
+.dealership.homecoming {
+    max-width: 640px;
+}
+
+.dealership.homecoming video {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+}
+
+.fig-caption {
+    font-size: 0.8rem;
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+.video-link {
+    text-decoration: none;
+    color: var(--hyperlink-color);
+}
+
+.video-link:hover {
+    color: var(--main-bg-color);
+    background-color: var(--hyperlink-color);
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+/* css for s-series page */
+table {
+    width: 100%;
+    max-width: 820px;
+    margin: 0 auto 20px;
+    border-collapse: collapse;
+    font-size: 1rem;
+    text-align: center;
+}
+
+thead {
+    background-color: var(--table-head-bg);
+    font-weight: 700;
+}
+
+thead th {
+    padding: 0.4rem;
+    text-align: center;
+}
+
+tbody tr {
+    background-color: var(--bottom-bg-color);
+    border-bottom: 1px solid var(--table-horiz-border);
+}
+
+tbody tr:nth-child(even) {
+    background-color: var(--table-background);
+}
+
+tbody td {
+    padding: 0.4rem;
+}
+
+table th {
+    border-top: 2px solid var(--table-horiz-border);
+    border-bottom: 2px solid var(--table-horiz-border);
+}
+
+.s-series h3 {
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 0.2rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+ol {
+    background-color: var(--table-background);
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    margin: 0px auto 1rem;
+    border-top: 2px solid var(--table-horiz-border);
+    border-bottom: 2px solid var(--table-horiz-border);
+}
+
+h3.ol-h3 {
+    text-align: left;
+    background-color: var(--table-head-bg);
+    padding: 0.3rem;
+    padding-top: 0.35rem;
+    padding-left: 1rem;
+    margin: 0px;
+    border-top-left-radius: 0.3rem;
+    border-top-right-radius: 0.3rem;
+}
+
+ol li {
+
+    margin-left: 20px;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+}
+
+ol li::marker {
+    color: var(--heading-color);
+    font-weight: 700;
+}
+
+.series-1,
+.series-2,
+.series-3 {
+    margin: 5px;
+    padding: 0.5rem;
+    border-radius: 0.4rem;
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+.series-3 {
+    margin-bottom: 0.8rem;
+}
+
+.series-1>p,
+.series-2>p,
+.series-3>p {
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+}
+
+.series-1 {
+    background-color: var(--series-1-bg-color);
+}
+
+.series-2 {
+    background-color: var(--series-2-bg-color);
+}
+
+.series-3 {
+    background-color: var(--series-3-bg-color);
+}
