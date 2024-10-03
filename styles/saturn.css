@@ -49,7 +49,7 @@ body {
     margin: 10px auto;
     padding-left: 10px;
     padding-right: 10px;
-    min-width: 250px;
+    min-width: 280px;
     max-width: 2000px;
 }
 
@@ -330,9 +330,13 @@ aside h2 {
     }
 }
 
-@media (max-width: 370px) {
+@media (max-width: 350px) {
     table {
-        font-size: 0.7rem;
+        font-size: 0.6rem;
+    }
+
+    audio {
+        zoom: 0.8;
     }
 }
 
