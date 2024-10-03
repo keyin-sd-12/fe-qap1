@@ -49,7 +49,7 @@ body {
     margin: 10px auto;
     padding-left: 10px;
     padding-right: 10px;
-    min-width: 200px;
+    min-width: 250px;
     max-width: 2000px;
 }
 
@@ -327,6 +327,12 @@ aside h2 {
 
     table {
         font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 370px) {
+    table {
+        font-size: 0.7rem;
     }
 }
 
